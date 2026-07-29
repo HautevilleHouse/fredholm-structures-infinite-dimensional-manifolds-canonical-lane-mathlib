@@ -1,0 +1,19 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.FredholmStructuresInfiniteDimensionalManifoldsCanonicalLaneLean.FredholmStructurePackage
+import HautevilleHouse.FredholmStructuresInfiniteDimensionalManifoldsCanonicalLaneLean.EllipticComplexPackage
+import HautevilleHouse.FredholmStructuresInfiniteDimensionalManifoldsCanonicalLaneLean.BanachManifoldPackage
+import HautevilleHouse.FredholmStructuresInfiniteDimensionalManifoldsCanonicalLaneLean.SmaleTheoremPackage
+import HautevilleHouse.FredholmStructuresInfiniteDimensionalManifoldsCanonicalLaneLean.AtiyahSingerTheoremPackage
+
+namespace HautevilleHouse
+namespace FredholmStructuresInfiniteDimensionalManifoldsCanonicalLaneLean
+
+def ConstrainedFredholmClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_fredholm_endgame (A : AdmissibleClass) :
+    ConstrainedFredholmClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end FredholmStructuresInfiniteDimensionalManifoldsCanonicalLaneLean
+end HautevilleHouse
